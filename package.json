@@ -1,0 +1,46 @@
+{
+  "name": "sails-test-helper",
+  "version": "0.0.1",
+  "description": "Test helper for Sails.js.",
+  "main": "index.js",
+  "bin": {
+    "sails-test-helper": "./bin/sails-test-helper.js"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zand3rs/sails-test-helper.git"
+  },
+  "keywords": [
+    "sails",
+    "test",
+    "helper",
+    "sails-test-helper",
+    "sails-test",
+    "test-helper",
+    "sails_test_helper",
+    "sails_test",
+    "test_helper"
+  ],
+  "author": {
+    "name": "Alexander Magtipon"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zand3rs/sails-test-helper/issues"
+  },
+  "homepage": "https://github.com/zand3rs/sails-test-helper",
+  "dependencies": {
+    "chai": "^1.10.0",
+    "commander": "^2.6.0",
+    "fs-extra": "^0.14.0",
+    "mocha": "^2.0.1",
+    "prompt": "^0.2.14",
+    "sinon": "^1.12.1",
+    "sinon-chai": "^2.6.0",
+    "supertest": "^0.15.0",
+    "supertest-session": "0.0.7"
+  }
+}
