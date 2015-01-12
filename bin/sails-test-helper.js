@@ -25,7 +25,7 @@ function init() {
   prompt.delimiter = "";
   prompt.start();
 
-  var skelPath = path.join("..", "skel");
+  var skelPath = path.join(__dirname, "..", "skel");
   var files = fs.readdirSync(skelPath);
   console.log("This will overwrite the ff. files and directories:", files);
   prompt.confirm("Do you want to continue?", function(err, ans) {
