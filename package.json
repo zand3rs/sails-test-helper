@@ -25,7 +25,8 @@
     "test_helper"
   ],
   "author": {
-    "name": "Alexander Magtipon"
+    "name": "Alexander Magtipon",
+    "email": "zand3rs@gmail.com"
   },
   "license": "MIT",
   "bugs": {
