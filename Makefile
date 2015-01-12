@@ -12,12 +12,14 @@
 
 ENV_VARS=NODE_ENV=test PORT=9999
 MOCHA=$(ENV_VARS) ./node_modules/.bin/mocha
+MOCHA_DEFAULT_OPTS=--recursive -t 10000
 MOCHA_OPTS=-R spec
 
 check: test
 
 test:
-	@$(MOCHA) $(MOCHA_OPTS) $(addprefix test/,$(patsubst test/%,%,$(filter-out $@,$(MAKECMDGOALS))))
+	@$(MOCHA) $(MOCHA_DEFAULT_OPTS) $(MOCHA_OPTS) \
+	$(addprefix test/,$(patsubst test/%,%,$(filter-out $@,$(MAKECMDGOALS))))
 
 clean:
 	@echo 'deleting node_modules...'
