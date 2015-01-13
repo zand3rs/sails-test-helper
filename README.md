@@ -47,7 +47,8 @@ test/
 
 ## Writing Tests
 
-#### Controllers
+### Controllers
+
 
 ```javascript
 //-- test/unit/controllers/SampleController.test.js
@@ -62,6 +63,7 @@ describe(TEST_NAME, function() {
 });
 ```
 
+
 *Execute SampleController test*
 
 ```
@@ -74,7 +76,8 @@ $ make test
   1 passing (1s)
 ```
 
-#### Models
+
+### Models
 
 ```javascript
 //-- test/unit/models/Sample.test.js
