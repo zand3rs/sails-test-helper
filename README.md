@@ -1,6 +1,16 @@
 # sails-test-helper
 
-Test helper suite for Sails.js.
+Test helper suite for Sails.js using [Mocha](https://github.com/mochajs/mocha) test framework.
+
+## Dependencies
+
+* [Mocha](https://github.com/mochajs/mocha)
+* [Chai](https://github.com/chaijs/chai)
+* [Sinon](https://github.com/cjohansen/Sinon.JS)
+* [Sinon-Chai](https://github.com/domenic/sinon-chai)
+* [Supertest](https://github.com/visionmedia/supertest)
+* [Supertest-Session](https://github.com/rjz/supertest-session)
+
 
 ## Installation
 
@@ -29,10 +39,69 @@ The following will be copied to the current working directory:
 ```
 Makefile
 test/
-  fixtures
-  factories
-  helpers
-  unit
+  factories/
+  fixtures/
+  helpers/
+  unit/
+```
+
+## Writing Tests
+
+#### Controllers
+
+```javascript
+//-- test/unit/controllers/SampleController.test.js
+require("sails-test-helper");
+
+describe(TEST_NAME, function() {
+  describe("GET index", function() {
+    it("should be successful", function() {
+      request.get("/sample").expect(200);
+    });
+  });
+});
+```
+
+*Execute SampleController test*
+
+```
+$ make test
+
+  controllers/SampleController
+    GET index
+      ✓ should be successful (82ms)
+
+  1 passing (1s)
+```
+
+#### Models
+
+```javascript
+//-- test/unit/models/Sample.test.js
+require("sails-test-helper");
+
+describe(TEST_NAME, function() {
+  describe(".create()", function() {
+    it("should be successful", function(done) {
+      Sample.create().exec(function(err, record) {
+        expect(err).to.not.exist;
+        expect(record).to.exist;
+        done();
+      });
+    });
+  });
+});
 ```
 
 
+*Execute Sample test*
+
+```
+$ make test
+
+  models/Sample
+    .create()
+      ✓ should be successful 
+
+  1 passing (1s)
+```
