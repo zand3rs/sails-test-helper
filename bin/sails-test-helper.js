@@ -9,7 +9,8 @@ var prompt = require("prompt");
 var args = process.argv.slice(2);
 
 program
-  .version(package.version, "-v, --version");
+  .version(package.version, "-v, --version")
+  .usage("[command] [options]");
 
 program
   .command("init")
