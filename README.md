@@ -64,7 +64,7 @@ describe(TEST_NAME, function() {
 ```
 
 
-*Execute SampleController test*
+_Execute SampleController test_
 
 ```
 $ make test
@@ -97,7 +97,7 @@ describe(TEST_NAME, function() {
 ```
 
 
-*Execute Sample test*
+_Execute Sample test_
 
 ```
 $ make test
@@ -108,6 +108,28 @@ $ make test
 
   1 passing (1s)
 ```
+
+
+## Test Execution
+
+Tests are executed using **_make_** command. Basically the script will look for tests to be executed in **test/unit/** directory.
+
+```sh
+# Run all tests
+$ make test
+
+# Run tests under a specific directory
+# This will run all tests under test/unit/controllers directory
+$ make test controllers
+
+# This will run tests under test/unit/controllers and test/unit/models directories
+$ make test controllers models
+
+# Run a specific test file
+# This will run tests in test/unit/controllers/SampleController.test.js file
+$ make test controllers/SampleController.test
+```
+
 
 ## Helpers
 
@@ -125,3 +147,35 @@ $ make test
 * chai
 * request
 * xhr
+
+
+## Custom Helpers
+
+You can write your own test helpers or node modules and save it under **test/helpers** directory. Use the built-in **requireHelper()** function to load your custom helper.
+
+```javascript
+//-- test/unit/services/SampleService.test.js
+require("sails-test-helper");
+
+describe(TEST_NAME, function() {
+  it("should load my custom helper", function() {
+    var my_helper = requireHelper("my_helper");
+    expect(my_helper).to.exist;
+  });
+});
+```
+
+If you need to do some initialization prior to all your tests execution, you can put them inside **test/helpers/bootstrap.js** file. This file will be loaded automatically upon test execution.
+
+```javascript
+//-- unit/helpers/bootstrap.js
+//-- global variables can also be initialized here...
+
+before(function(done) {
+  //-- anything to run or initialize before running all tests...
+  
+  done();
+});
+```
+
+
