@@ -1,12 +1,17 @@
-require(process.cwd());
-var expect = require("chai").expect;
+var cwd = process.cwd();
 var path = require("path");
+var index = require(cwd);
+var package = require(path.join(cwd, "package.json"));
+var expect = require("chai").expect;
 
-describe(require("../package.json").name, function() {
+describe(package.name, function() {
 
   describe("bootstrap", function() {
     it("should lift sails", function() {
       expect(sails).to.exist;
+    });
+    it("should load helper bootstrap if it exists", function() {
+      expect(HELPER_BOOTSTRAP).to.exist;
     });
   });
 
