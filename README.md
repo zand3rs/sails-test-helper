@@ -10,6 +10,7 @@ Test helper suite for Sails.js using [Mocha](https://github.com/mochajs/mocha) t
 * [Sinon-Chai](https://github.com/domenic/sinon-chai)
 * [Supertest](https://github.com/visionmedia/supertest)
 * [Supertest-Session](https://github.com/rjz/supertest-session)
+* [Sails-Factory](https://github.com/zand3rs/sails-factory)
 
 
 ## Installation
@@ -164,6 +165,7 @@ $ make MOCHA_OPTS='-C -R dot' test
 * chai
 * request
 * xhr
+* factory
 
 
 ## Custom Helpers
@@ -185,7 +187,7 @@ describe(TEST_NAME, function() {
 If you need to do some initialization prior to all your tests execution, you can put them inside **test/helpers/bootstrap.js** file. This file will be loaded automatically upon test execution.
 
 ```javascript
-//-- unit/helpers/bootstrap.js
+//-- test/helpers/bootstrap.js
 //-- global variables can also be initialized here...
 
 before(function(done) {
@@ -195,4 +197,42 @@ before(function(done) {
 });
 ```
 
+## Factories
 
+You can use the built-in **factory** module to define, build or create factories.
+
+```javascript
+//-- test/unit/controllers/SampleController.test.js
+require("sails-test-helper");
+
+describe(TEST_NAME, function() {
+  before(function(done) {
+    //-- define a factory
+    factory.define('sample')
+      .attr('id', 0, {auto_increment: true});
+
+    //-- create an instance of the factory
+    factory.create("sample", function(sample) {
+      done();
+    });
+  });
+  
+  describe("GET index", function() {
+    it("should be successful", function() {
+      request.get("/sample").expect(200);
+    });
+  });
+});
+```
+
+You can also load your factory files from **test/factories/**  through your local bootstrap file.
+
+```javascript
+//-- test/helpers/bootstrap.js
+before(function(done) {
+  factory.load();
+  done();
+});
+```
+
+_Please see [sails-factory](https://github.com/zand3rs/sails-factory) for more details._
