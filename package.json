@@ -7,7 +7,7 @@
     "sails-test-helper": "./bin/sails-test-helper.js"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make MOCHA_OPTS='-C -R dot' test"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "fs-extra": "~0.14.0",
     "mocha": "~2.1.0",
     "prompt": "~0.2.14",
+    "sails-factory": "~0.2.5",
     "sinon": "~1.12.2",
     "sinon-chai": "~2.6.0",
     "supertest": "~0.15.0",
