@@ -130,6 +130,23 @@ $ make test controllers models
 $ make test controllers/SampleController.test
 ```
 
+### Mocha Options
+
+Mocha options can be passed as parameter to **_make_**. By default, **_mocha_** is being executed using the ff. options:
+
+```sh
+# recursive with 30 second timeout using spec reporter
+$ mocha --recursive -t 30000 -R spec
+```
+
+Use **MOCHA_OPTS** commandline variable to pass specific **_mocha_** options to **_make_**.
+
+```sh
+# Dot format without colors. Useful for test execution on CI servers such as Jenkins. 
+$ make MOCHA_OPTS='-C -R dot' test
+```
+
+
 
 ## Helpers
 
