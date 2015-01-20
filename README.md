@@ -225,7 +225,7 @@ describe(TEST_NAME, function() {
 });
 ```
 
-You can also load your factory files from **test/factories/**  through your local bootstrap file.
+You can also load your factory definitions from **test/factories/**  through your local bootstrap file.
 
 ```javascript
 //-- test/helpers/bootstrap.js
