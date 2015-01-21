@@ -208,16 +208,23 @@ require("sails-test-helper");
 describe(TEST_NAME, function() {
   before(function(done) {
     //-- define a factory
-    factory.define('sample')
-      .attr('id', 0, {auto_increment: true});
+    factory.define("sample")
+      .attr("id", 0, {auto_increment: true});
 
-    //-- create an instance of the factory
+    //-- create a record
     factory.create("sample", function(sample) {
       done();
     });
   });
   
   describe("GET index", function() {
+    before(function(done) {
+      Sample.count(function(err, count) {
+        expect(err).to.not.exist;
+        expect(count).to.be.greaterThan(0);
+        done();
+      });
+    });
     it("should be successful", function() {
       request.get("/sample").expect(200);
     });
