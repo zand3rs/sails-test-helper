@@ -157,20 +157,21 @@ $ make MOCHA_OPTS='-C -R dot' test
 * TEST_FACTORIES_PATH
 * TEST_FIXTURES_PATH
 * requireHelper()
-* stub()
-* mock()
-* expect()
-* should
-* sinon
-* chai
-* request
-* xhr
-* factory
+* [sinon](https://github.com/cjohansen/Sinon.JS)
+* [stub()](https://github.com/cjohansen/Sinon.JS)
+* [mock()](https://github.com/cjohansen/Sinon.JS)
+* [chai](https://github.com/chaijs/chai)
+* [expect()](https://github.com/chaijs/chai)
+* [should](https://github.com/chaijs/chai)
+* [request](https://github.com/rjz/supertest-session)
+* [xhr](https://github.com/visionmedia/supertest)
+* [factory](https://github.com/zand3rs/sails-factory)
+
 
 
 ## Custom Helpers
 
-You can write your own test helpers or node modules and save it under **test/helpers** directory. Use the built-in **requireHelper()** function to load your custom helper.
+You can write your own test helpers or node modules and save it under **test/helpers/** directory. Use the built-in **requireHelper()** function to load your custom helper.
 
 ```javascript
 //-- test/unit/services/SampleService.test.js
@@ -232,7 +233,7 @@ describe(TEST_NAME, function() {
 });
 ```
 
-You can also load your factory definitions from **test/factories/**  through your local bootstrap file.
+You can also load your factory definitions from **test/factories/** directory through your local bootstrap file.
 
 ```javascript
 //-- test/helpers/bootstrap.js
