@@ -1,6 +1,6 @@
 {
   "name": "sails-test-helper",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Test helper suite for Sails.js.",
   "main": "index.js",
   "bin": {
@@ -39,7 +39,7 @@
     "fs-extra": "~0.14.0",
     "mocha": "~2.1.0",
     "prompt": "~0.2.14",
-    "sails-factory": "~0.3.0",
+    "sails-factory": "~0.3.1",
     "sinon": "~1.12.2",
     "sinon-chai": "~2.6.0",
     "supertest": "~0.15.0",
