@@ -1,16 +1,17 @@
 # sails-test-helper
 
-Test helper suite for Sails.js using [Mocha](https://github.com/mochajs/mocha) test framework.
+Test helper suite for Sails.js using Mocha test framework.
 
 ## Dependencies
 
-* [Mocha](https://github.com/mochajs/mocha)
-* [Chai](https://github.com/chaijs/chai)
-* [Sinon](https://github.com/cjohansen/Sinon.JS)
-* [Sinon-Chai](https://github.com/domenic/sinon-chai)
-* [Supertest](https://github.com/visionmedia/supertest)
-* [Supertest-Session](https://github.com/rjz/supertest-session)
-* [Sails-Factory](https://github.com/zand3rs/sails-factory)
+* [node-test-helper](https://github.com/zand3rs/node-test-helper)
+* [mocha](https://github.com/mochajs/mocha)
+* [chai](https://github.com/chaijs/chai)
+* [sinon](https://github.com/cjohansen/Sinon.JS)
+* [sinon-chai](https://github.com/domenic/sinon-chai)
+* [supertest](https://github.com/visionmedia/supertest)
+* [supertest-session](https://github.com/rjz/supertest-session)
+* [sails-factory](https://github.com/zand3rs/sails-factory)
 
 
 ## Installation
@@ -57,8 +58,10 @@ require("sails-test-helper");
 
 describe(TEST_NAME, function() {
   describe("GET index", function() {
-    it("should be successful", function() {
-      request.get("/sample").expect(200);
+    it("should be successful", function(done) {
+      request.get("/sample")
+        .expect(200)
+        .end(done);
     });
   });
 });
@@ -72,9 +75,9 @@ $ make test
 
   controllers/SampleController
     GET index
-      ✓ should be successful (82ms)
+      ✓ should be successful
 
-  1 passing (1s)
+  1 passing
 ```
 
 
@@ -107,7 +110,7 @@ $ make test
     .create()
       ✓ should be successful 
 
-  1 passing (1s)
+  1 passing
 ```
 
 
@@ -226,8 +229,10 @@ describe(TEST_NAME, function() {
         done();
       });
     });
-    it("should be successful", function() {
-      request.get("/sample").expect(200);
+    it("should be successful", function(done) {
+      request.get("/sample")
+        .expect(200)
+        .end(done);
     });
   });
 });

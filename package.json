@@ -1,6 +1,6 @@
 {
   "name": "sails-test-helper",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Test helper suite for Sails.js.",
   "main": "index.js",
   "bin": {
@@ -36,15 +36,15 @@
   "dependencies": {
     "commander": "~2.6.0",
     "fs-extra": "~0.14.0",
-    "mocha": "^2.2.1",
-    "node-test-helper": "^0.2.0",
+    "mocha": "~2.2.1",
+    "node-test-helper": "~0.2.0",
     "prompt": "~0.2.14",
     "sails-factory": "~0.3.1",
     "supertest": "~0.15.0",
     "supertest-session": "0.0.7"
   },
   "devDependencies": {
-    "chai": "^2.2.0",
+    "chai": "~2.2.0",
     "grunt": "~0.4.5",
     "sails": "~0.10.5"
   }
