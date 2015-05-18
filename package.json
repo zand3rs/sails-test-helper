@@ -1,6 +1,6 @@
 {
   "name": "sails-test-helper",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Test helper suite for Sails.js.",
   "main": "index.js",
   "bin": {
