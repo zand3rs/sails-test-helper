@@ -28,7 +28,7 @@
     "name": "Alexander Magtipon",
     "email": "zand3rs@gmail.com"
   },
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/zand3rs/sails-test-helper/issues"
   },
