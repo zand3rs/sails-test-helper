@@ -40,12 +40,12 @@
     "node-test-helper": "~0.2.0",
     "prompt": "~0.2.14",
     "sails-factory": "~0.3.1",
-    "supertest": "~0.15.0",
-    "supertest-session": "0.0.7"
+    "supertest": "~1.0.0"
   },
   "devDependencies": {
     "chai": "~2.2.0",
     "grunt": "~0.4.5",
-    "sails": "~0.10.5"
+    "sails": "~0.10.5",
+    "supertest-session": "~1.0.0"
   }
 }
